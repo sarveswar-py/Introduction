@@ -41,5 +41,5 @@ Profile
 
 
 ### Connect with Me
- - [LinkedIn](https://www.linkedin.com/in/sarveswararao)
+ - [LinkedIn](https://www.linkedin.com/in/sarveswararao-patchipulusu)
  - [Instagram](https://www.instagram.com/just_sarve)
