@@ -7,7 +7,7 @@ Hi there! I'm a data analyst who thrives at the intersection of analytics and ac
 
 Whether it's CRM migrations, financial insights, or customer segmentation—I'm your go-to for fast, flexible, and future-ready analytics.
 
-### 🔧 What I Do
+🔧 What I Do
 
 - 🧩 Build **interactive dashboards** in Power BI & Excel for KPI and trend tracking
 - 🛠️ Design and write **SQL queries** for reporting, segmentation, and forecasting
@@ -16,7 +16,7 @@ Whether it's CRM migrations, financial insights, or customer segmentation—I'm 
 - 💬 Translate business needs into clear, actionable data insights for stakeholders
 
 
-### 🔧 Skills & Tools
+ 🔧 Skills & Tools
 
 <p align="left">
   <img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL"/>
@@ -32,7 +32,7 @@ Whether it's CRM migrations, financial insights, or customer segmentation—I'm 
 </p>
 
 
-📌 ### 💼 Featured Projects
+ 💼 Featured Projects
 
 #### 📊 Retail & Client Insights Dashboard  
 Analyzed customer behavior, built KPI dashboards, and ranked product performance across regions.  
