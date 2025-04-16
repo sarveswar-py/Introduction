@@ -1,7 +1,8 @@
 # 👨‍💻 Sarveswara Rao Patchipulusu
 
-![Toronto Skyline with Data Insights](https://github.com/sarveswar-py/introduction/blob/main/Toronto%20Skyline%20with%20Data%20Insights.png?raw=true)
-
+<p align="center">
+  <img src="https://github.com/sarveswar-py/introduction/blob/main/Toronto%20Skyline%20with%20Data%20Insights.png?raw=true" alt="Toronto Banner" width="1000" height="200">
+</p>
 
 
 ### Tech-Savvy. Insight-Driven. Business-Ready.
