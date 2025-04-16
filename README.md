@@ -1,8 +1,5 @@
 👋 Hi there, I'm Sarveswara Rao Patchipulusu
 
-![Toronto Skyline with Data Insights](https://github.com/sarveswar-py/sarveswar-py/blob/main/Toronto%20Skyline%20with%20Data%20Insights.png?raw=true)
-
-
 Data Analyst | Business & Client Insights | Power BI | SQL | Reporting Automation | CRM & Financial Analytics
 
 🔍 Transforming raw data into strategy. I'm a passionate data analyst with a unique blend of technical skills, business thinking, and storytelling ability—helping companies turn messy data into meaningful action.
