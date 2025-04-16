@@ -27,9 +27,16 @@ Whether it's CRM migrations, financial insights, or customer segmentation—I'm 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="40" alt="Azure"/>
   <img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png" width="40" alt="Excel"/>
   <img src="https://img.icons8.com/color/48/000000/power-bi.png" width="40" alt="Power BI"/>
-  <img src="https://img.icons8.com/ios-filled/50/000000/microsoft-dynamics-365.png" width="40" alt="Dynamics 365"/>
+  <p align="left">
+  <!-- Dynamics 365 -->
+  <img src="https://img.icons8.com/fluency/48/microsoft-dynamics-365.png" width="40" alt="Dynamics 365"/>
+    <!-- Power Automate -->
   <img src="https://img.icons8.com/color/48/000000/microsoft-flow.png" width="40" alt="Power Automate"/>
+
+  <!-- DAX (custom icon – soft fill style) -->
   <img src="https://img.icons8.com/external-soft-fill-juicy-fish/60/000000/external-dax-big-data-soft-fill-soft-fill-juicy-fish.png" width="40" alt="DAX"/>
+  </p>
+
 </p>
 ### 🤖 Machine Learning & Data Science Stack
 
