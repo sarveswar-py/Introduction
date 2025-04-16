@@ -7,17 +7,13 @@ Hi there! I'm a data analyst who thrives at the intersection of analytics and ac
 
 Whether it's CRM migrations, financial insights, or customer segmentation—I'm your go-to for fast, flexible, and future-ready analytics.
 
-💼 What I Do
+### 🔧 What I Do
 
-Build interactive dashboards in Power BI and Excel to visualize trends and KPIs
-
-Design and implement SQL queries for business reporting, forecasting, and segmentation
-
-Develop automated reporting pipelines using Python and Power Automate
-
-Perform data cleaning, mapping, and CRM data migrations (Dynamics 365)
-
-Translate business questions into clear, actionable insights
+- 🧩 Build **interactive dashboards** in Power BI & Excel for KPI and trend tracking
+- 🛠️ Design and write **SQL queries** for reporting, segmentation, and forecasting
+- 🔄 Develop **automated pipelines** using Python and Power Automate to reduce manual work
+- 🧹 Clean, map, and migrate CRM data to **Dynamics 365**, ensuring consistency and quality
+- 💬 Translate business needs into clear, actionable data insights for stakeholders
 
 
 ### 🔧 Skills & Tools
@@ -36,31 +32,30 @@ Translate business questions into clear, actionable insights
 </p>
 
 
-📌 Highlight Projects
+📌 ### 💼 Featured Projects
 
-Retail & Client Insights Dashboard
+#### 📊 Retail & Client Insights Dashboard  
+Analyzed customer behavior, built KPI dashboards, and ranked product performance across regions.  
+**Tools:** Power BI · SQL · Excel · DAX
 
-Analyzed customer trends, built KPI dashboards, and ranked product performance across regions.
+---
 
-Power BI | SQL | Excel | DAX
+#### 🔄 CRM Migration & Data Cleansing  
+Led full-cycle CRM migration using Data Sure, ensured mapping accuracy, and maintained clean, reliable datasets.  
+**Tools:** SQL · Excel · Dynamics 365
 
-CRM Migration & Data Cleansing
+---
 
-Led end-to-end CRM migration using Data Sure, validated mapping accuracy, and maintained data integrity.
+#### ✈️ Predictive Analytics – Flight Fare Forecast  
+Built regression models to forecast airfares using historical and behavioral data.  
+**Tools:** Python · Scikit-learn · Power BI
 
-SQL | Excel | Dynamics 365
+---
 
-Predictive Analytics – Flight Fare Forecast
+#### 🎬 Movie Recommendation System  
+Implemented and compared collaborative filtering and hybrid models using deep learning.  
+**Tools:** TensorFlow · PyTorch · Pandas
 
-Used regression models to predict airfares using historical and behavioral data.
-
-Python | Scikit-learn | Power BI
-
-Movie Recommender System
-
-Implemented and compared collaborative filtering vs hybrid models using deep learning.
-
-TensorFlow | PyTorch | Pandas
 
 ### 🎓 Certifications
 
