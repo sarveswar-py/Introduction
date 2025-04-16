@@ -76,9 +76,9 @@ TensorFlow | PyTorch | Pandas
 
 📧 Email: sarveshpatchipulusu@gmail.com
 
-🔗 LinkedIn: linkedin.com/in/your-link
+🔗 LinkedIn: www.linkedin.com/in/sarveswararao-patchipulusu
 
-🌐 Portfolio: coming soon...
+🌐 Portfolio: https://www.sarvesh-thedataspecialist.com/
 
 "I don’t just analyze data. I turn it into strategy."
 
