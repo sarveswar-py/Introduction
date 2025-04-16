@@ -1,10 +1,12 @@
-👋 Hi there, I'm Sarveswara Rao Patchipulusu
+# 👨‍💻 Sarveswara Rao Patchipulusu
 
-Data Analyst | Business & Client Insights | Power BI | SQL | Reporting Automation | CRM & Financial Analytics
+![Toronto Skyline with Data Insights](https://github.com/sarveswar-py/sarveswar-py/blob/main/Toronto%20Skyline%20with%20Data%20Insights.png?raw=true)
 
-🔍 Transforming raw data into strategy. I'm a passionate data analyst with a unique blend of technical skills, business thinking, and storytelling ability—helping companies turn messy data into meaningful action.
+### Tech-Savvy. Insight-Driven. Business-Ready.
 
-With experience across banking, retail analytics, and CRM systems like Dynamics 365, I specialize in building impactful dashboards, cleaning large datasets, and automating business reports using SQL, Power BI, and Python.
+Hi there! I'm a data analyst who thrives at the intersection of analytics and action. I specialize in building scalable dashboards, automating reporting systems, and transforming raw data into business strategy using tools like **Power BI**, **SQL**, **Python**, and **Azure**.
+
+Whether it's CRM migrations, financial insights, or customer segmentation—I'm your go-to for fast, flexible, and future-ready analytics.
 
 💼 What I Do
 
