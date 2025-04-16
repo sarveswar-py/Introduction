@@ -1,45 +1,75 @@
-# Inroduction
-Profile
-# 💼 P. Sarveswararao | Data Analyst
+👋 Hi there, I'm Sarveswara Rao Patchipulusu
 
-👋 Hi there! I’m P. Sarveswararao, an enthusiastic Data Analyst with a background in AI, Machine Learning, and Data Automation. I am passionate about transforming complex datasets into actionable insights through effective data analysis and visualization techniques.
+Data Analyst | Business & Client Insights | Power BI | SQL | Reporting Automation | CRM & Financial Analytics
 
-## 🎓 Education  
- -Postgraduate in Artificial Intelligence & Machine Learning  
-  Lambton College
+🔍 Transforming raw data into strategy. I'm a passionate data analyst with a unique blend of technical skills, business thinking, and storytelling ability—helping companies turn messy data into meaningful action.
 
-## 🛠 Skills  
-- Languages & Tools:  
-  -[Python]
-  -[Pandas]
-  -[NumPy]
-  -[Power BI]
-  -[SQL] 
-  - Data Analysis: Python (Pandas, NumPy), Power BI, MySQL, Excel  
-  - Data Visualization: Power BI, Tableau, Matplotlib, Seaborn  
-  - ETL Tools: Datasure  
-  - Machine Learning: LSTM, GRU, Time Series Forecasting
+With experience across banking, retail analytics, and CRM systems like Dynamics 365, I specialize in building impactful dashboards, cleaning large datasets, and automating business reports using SQL, Power BI, and Python.
 
-## 🌱 Currently Learning  
- - Advanced Power BI features.
- - Optimizing Machine Learning Pipelines. 
- - Cloud Computing with AWS & Azure.
+💼 What I Do
 
+Build interactive dashboards in Power BI and Excel to visualize trends and KPIs
 
-## 👀 Projects  
- - Household Power Consumption Forecasting: Time series analysis using LSTM models.  
- - Smart Assistant Restaurant Chatbot (S.A.R.C): Chatbot optimization with data analytics for better customer interaction.  
-- Word 2 Wave: Implementing deep learning models for audio classification using TensorFlow and PyTorch.
+Design and implement SQL queries for business reporting, forecasting, and segmentation
 
-## 💬 Reach Me At  
- - Email: sarveshpatchipulusu@gmail.com  
- - LinkedIn: https://www.linkedin.com/in/sarveswararao-patchipulusu
- - GitHub Projects: https://github.com/sarveswar-py
+Develop automated reporting pipelines using Python and Power Automate
 
-##⚡ Fun Fact: 
- -I believe that data tells stories, and I love being the detective who uncovers the insights hidden within the numbers! When I'm not analyzing data, I'm probably figuring out how to  optimize my workflow or experimenting with new tech tools.
+Perform data cleaning, mapping, and CRM data migrations (Dynamics 365)
 
+Translate business questions into clear, actionable insights
 
-### Connect with Me
- - [LinkedIn](https://www.linkedin.com/in/sarveswararao-patchipulusu)
- - [Instagram](https://www.instagram.com/just_sarve)
+⚙️ Tech Toolbox
+
+Languages: SQL, Python, DAX, Excel M
+
+Data Visualization: Power BI, Excel, Matplotlib
+
+CRM & Cloud: Dynamics 365, Azure Data Factory, Power Automate
+
+Concepts: ETL, KPI Tracking, Forecasting, Customer Segmentation, Predictive Modeling
+
+📌 Highlight Projects
+
+Retail & Client Insights Dashboard
+
+Analyzed customer trends, built KPI dashboards, and ranked product performance across regions.
+
+Power BI | SQL | Excel | DAX
+
+CRM Migration & Data Cleansing
+
+Led end-to-end CRM migration using Data Sure, validated mapping accuracy, and maintained data integrity.
+
+SQL | Excel | Dynamics 365
+
+Predictive Analytics – Flight Fare Forecast
+
+Used regression models to predict airfares using historical and behavioral data.
+
+Python | Scikit-learn | Power BI
+
+Movie Recommender System
+
+Implemented and compared collaborative filtering vs hybrid models using deep learning.
+
+TensorFlow | PyTorch | Pandas
+
+🏆 Certifications
+
+Microsoft Power BI Data Analyst Associate
+Azure Data Scientist Learning Path (Microsoft)
+Postgraduate Certificate – AI & Machine Learning (Lambton College)
+
+🤝 Let's Connect
+
+📍 Based in Toronto, ON, Canada
+
+📧 Email: sarveshpatchipulusu@gmail.com
+
+🔗 LinkedIn: linkedin.com/in/your-link
+
+🌐 Portfolio: coming soon...
+
+"I don’t just analyze data. I turn it into strategy."
+
+Thanks for visiting my GitHub profile 🙌
