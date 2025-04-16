@@ -61,11 +61,14 @@ Implemented and compared collaborative filtering vs hybrid models using deep lea
 
 TensorFlow | PyTorch | Pandas
 
-🏆 Certifications
+### 🎓 Certifications
 
-Microsoft Power BI Data Analyst Associate
-Azure Data Scientist Learning Path (Microsoft)
-Postgraduate Certificate – AI & Machine Learning (Lambton College)
+<p align="left">
+  <img src="https://img.shields.io/badge/Microsoft%20Certified%20Power%20BI%20Data%20Analyst-0078D4?style=for-the-badge&logo=microsoft&logoColor=white" alt="Power BI Cert"/>
+  <img src="https://img.shields.io/badge/Azure%20Data%20Scientist-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure Cert"/>
+  <img src="https://img.shields.io/badge/Databricks%20Lakehouse%20Fundamentals-E87400?style=for-the-badge&logo=databricks&logoColor=white" alt="Databricks Badge"/>
+  <img src="https://img.shields.io/badge/AI%20&%20ML%20Postgrad%20Certificate-Lambton%20College-0A66C2?style=for-the-badge" alt="AI ML Certificate"/>
+</p>
 
 🤝 Let's Connect
 
