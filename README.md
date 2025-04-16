@@ -18,15 +18,22 @@ Perform data cleaning, mapping, and CRM data migrations (Dynamics 365)
 
 Translate business questions into clear, actionable insights
 
-⚙️ Tech Toolbox
 
-Languages: SQL, Python, DAX, Excel M
+### 🔧 Skills & Tools
 
-Data Visualization: Power BI, Excel, Matplotlib
+<p align="left">
+  <img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI"/>
+  <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel"/>
+  <img src="https://img.shields.io/badge/DAX-512BD4?style=for-the-badge&logoColor=white" alt="DAX"/>
+  <img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure"/>
+  <img src="https://img.shields.io/badge/Dynamics%20365-000000?style=for-the-badge&logo=microsoft-dynamics-365&logoColor=white" alt="Dynamics 365"/>
+  <img src="https://img.shields.io/badge/Power%20Automate-0066FF?style=for-the-badge&logo=Microsoft-Power-Automate&logoColor=white" alt="Power Automate"/>
+  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn"/>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"/>
+</p>
 
-CRM & Cloud: Dynamics 365, Azure Data Factory, Power Automate
-
-Concepts: ETL, KPI Tracking, Forecasting, Customer Segmentation, Predictive Modeling
 
 📌 Highlight Projects
 
