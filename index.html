@@ -206,6 +206,16 @@
       <button class="run-btn rleg" onclick="addExtra('lb')">Leg Bye</button>
       <button class="run-btn rrundo" onclick="undoLast()">↩ Undo</button>
     </div>
+    <div style="margin-top:8px">
+      <div style="color:#64b5f6;font-size:0.75rem;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">Run Out (runs + wicket same ball)</div>
+      <div class="run-grid">
+        <button class="run-btn" style="background:#7b1fa2;color:#fff;font-size:0.8rem" onclick="addRunWicket(0)">0+W</button>
+        <button class="run-btn" style="background:#7b1fa2;color:#fff;font-size:0.8rem" onclick="addRunWicket(1)">1+W</button>
+        <button class="run-btn" style="background:#7b1fa2;color:#fff;font-size:0.8rem" onclick="addRunWicket(2)">2+W</button>
+        <button class="run-btn" style="background:#7b1fa2;color:#fff;font-size:0.8rem" onclick="addRunWicket(3)">3+W</button>
+      </div>
+    </div>
+    </div>
   </div>
 
   <div class="nav-btns">
@@ -236,7 +246,7 @@
       <option>Stumped</option>
       <option>Hit Wicket</option>
     </select>
-    <label>New Batter</label>
+    <label id="new-batter-label">New Batter</label>
     <select id="new-batter-select"></select>
     <div class="modal-btns">
       <button class="btn btn-sm btn-secondary" onclick="cancelWicket()">Cancel</button>
@@ -372,24 +382,94 @@ function addWicket() {
   document.getElementById('wicket-modal').classList.add('open');
 }
 
+function addRunWicket(runs) {
+  if (state.matchEnded) return;
+  if (state.wickets[ii()] >= state.maxPlayers - 1) { alert('All out!'); return; }
+  // Store runs to apply alongside wicket
+  state._pendingRunWicketRuns = runs;
+  const sel = document.getElementById('new-batter-select');
+  sel.innerHTML = '';
+  const batting = state.players[state.battingTeam];
+  // For run out, either batter could be out — show both on crease
+  const onCrease = [state.striker, state.nonStriker];
+  onCrease.forEach(idx => {
+    const opt = document.createElement('option');
+    opt.value = 'out_' + idx;
+    opt.textContent = `OUT: ${batting[idx].name}`;
+    sel.appendChild(opt);
+  });
+  // Separator then new batters
+  for (let i = state.nextBatterIdx; i < batting.length; i++) {
+    if (!batting[i].out) {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = `IN: ${batting[i].name}`;
+      sel.appendChild(opt);
+    }
+  }
+  // Override dismissal to Run Out
+  document.getElementById('dismissal-type').value = 'Run Out';
+  // Show special label
+  document.querySelector('#wicket-modal h2').textContent = `🔴 ${runs} Run(s) + Wicket`;
+  document.getElementById('wicket-modal').classList.add('open');
+}
+
 function cancelWicket() {
+  state._pendingRunWicketRuns = undefined;
+  document.querySelector('#wicket-modal h2').textContent = '🔴 Wicket!';
   document.getElementById('wicket-modal').classList.remove('open');
 }
 
 function confirmWicket() {
   document.getElementById('wicket-modal').classList.remove('open');
+  document.querySelector('#wicket-modal h2').textContent = '🔴 Wicket!';
   saveUndo();
   const dismissal = document.getElementById('dismissal-type').value;
-  const newBatterIdx = parseInt(document.getElementById('new-batter-select').value);
-  const batter = state.players[state.battingTeam][state.striker];
+  const selVal = document.getElementById('new-batter-select').value;
+  const pendingRuns = state._pendingRunWicketRuns;
+  state._pendingRunWicketRuns = undefined;
+
+  // Figure out who is out and who is new batter
+  let outIdx, newBatterIdx;
+  if (typeof selVal === 'string' && selVal.startsWith('out_')) {
+    // run+wicket flow: selected who is OUT from the dropdown
+    outIdx = parseInt(selVal.replace('out_', ''));
+    // new batter is next in line
+    const batting = state.players[state.battingTeam];
+    newBatterIdx = state.nextBatterIdx;
+    while (newBatterIdx < batting.length && batting[newBatterIdx].out) newBatterIdx++;
+  } else {
+    outIdx = state.striker;
+    newBatterIdx = parseInt(selVal);
+  }
+
+  // Apply runs scored on this ball
+  const runs = pendingRuns !== undefined ? pendingRuns : 0;
+  if (runs > 0) {
+    const striker = state.players[state.battingTeam][state.striker];
+    striker.runs += runs;
+    state.runs[ii()] += runs;
+    const bs = bowlerS(); bs.runs += runs; bs.currentOverRuns += runs;
+  }
+
+  const batter = state.players[state.battingTeam][outIdx];
   batter.out = true; batter.dismissal = dismissal;
   state.wickets[ii()]++; state.balls[ii()]++;
   const bs = bowlerS(); bs.balls++;
   if (['Bowled','Caught','LBW','Stumped'].includes(dismissal)) bs.wickets++;
-  state.currentOverBalls.push({ cls: 'wicket', label: 'W' });
-  state.currentOverLog.push({ type: 'wicket', dismissal });
-  state.striker = newBatterIdx;
+
+  const label = runs > 0 ? `${runs}W` : 'W';
+  state.currentOverBalls.push({ cls: 'wicket', label });
+  state.currentOverLog.push({ type: 'wicket', dismissal, runs });
+
+  // Rotate strike if odd runs and non-striker is the one out
+  if (runs % 2 !== 0) swapStrike();
+
+  // New batter replaces the out batter
+  if (outIdx === state.striker) state.striker = newBatterIdx;
+  else state.nonStriker = newBatterIdx;
   if (newBatterIdx >= state.nextBatterIdx) state.nextBatterIdx = newBatterIdx + 1;
+
   if (state.wickets[ii()] >= state.maxPlayers - 1) { endOver(); checkInningsEnd(true); }
   else {
     if (state.balls[ii()] % 6 === 0 && state.balls[ii()] > 0) endOver();
