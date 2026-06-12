@@ -147,9 +147,18 @@
 <!-- SCORE SCREEN -->
 <div id="score-screen">
   <div class="innings-indicator">
-    <div class="innings-tab active" id="inn-tab-1">1st Innings</div>
-    <div class="innings-tab" id="inn-tab-2">2nd Innings</div>
+    <div class="innings-tab active" id="inn-tab-1" onclick="viewInnings(1)">1st Innings</div>
+    <div class="innings-tab" id="inn-tab-2" onclick="viewInnings(2)">2nd Innings</div>
   </div>
+  <!-- 1st innings view (read-only overlay during 2nd innings) -->
+  <div id="inn1-view" style="display:none">
+    <div style="background:#1a2a1a;border:1px solid #2d6a4f;border-radius:10px;padding:12px 16px;margin-bottom:12px;text-align:center;color:#90ee90;font-size:0.85rem">
+      👁 Viewing 1st Innings — <span id="inn1-summary"></span>
+    </div>
+    <div id="inn1-scorecard"></div>
+  </div>
+  <!-- Live scoring view -->
+  <div id="live-view">
 
   <div class="scoreboard">
     <div class="team-name" id="batting-team-name">Team 1</div>
@@ -222,6 +231,7 @@
     <button class="btn btn-sm btn-secondary" onclick="showScorecard()">📋 Scorecard</button>
     <button class="btn btn-sm btn-danger" onclick="newMatch()">🔄 New Match</button>
   </div>
+  </div><!-- end live-view -->
 </div>
 
 <!-- SCORECARD SCREEN -->
@@ -592,6 +602,8 @@ function startSecondInnings() {
   document.getElementById('inn-tab-1').classList.remove('active');
   document.getElementById('inn-tab-2').classList.add('active');
   document.getElementById('target-bar').style.display = 'flex';
+  document.getElementById('inn1-view').style.display = 'none';
+  document.getElementById('live-view').style.display = 'block';
   updateDisplay();
 }
 
@@ -733,6 +745,45 @@ function buildScorecardHTML() {
     html += `</div>`;
   }
   return html;
+}
+
+function viewInnings(n) {
+  if (n === 1 && state.innings === 2) {
+    // Show 1st innings scorecard view
+    document.getElementById('inn-tab-1').classList.add('active');
+    document.getElementById('inn-tab-2').classList.remove('active');
+    document.getElementById('live-view').style.display = 'none';
+    document.getElementById('inn1-view').style.display = 'block';
+    const runs = state.runs[0], wkts = state.wickets[0], balls = state.balls[0];
+    document.getElementById('inn1-summary').textContent = `${state.team1}: ${runs}/${wkts} (${oversStr(balls)} ov)`;
+    // Build mini scorecard for inn1
+    let html = `<div class="sc-section"><table class="scorecard-table">
+      <tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th></tr>`;
+    state.players[1].forEach(p => {
+      if (p.balls > 0 || p.out)
+        html += `<tr><td>${p.name} <span style="color:#888;font-size:0.75rem">${p.out?p.dismissal:'not out'}</span></td><td><b>${p.runs}</b></td><td>${p.balls}</td><td>${p.fours}</td><td>${p.sixes}</td></tr>`;
+    });
+    html += `<tr><td colspan="2" style="color:#aaa">Extras: ${state.extras[0]}</td><td colspan="3" style="font-weight:bold;color:#fff">Total: ${runs}/${wkts}</td></tr></table>`;
+    // Over summary
+    const ovs = state.overSummary[0];
+    if (ovs.length) {
+      html += `<div style="margin-top:12px;color:#64b5f6;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Over Summary</div>
+        <table class="over-summary-table"><tr><th>Over</th><th>Balls</th><th>Runs</th><th>Wkts</th><th>Score</th></tr>`;
+      ovs.forEach(ov => {
+        const ballsHtml = `<div class="over-balls-mini">${ov.balls.map(b=>`<div class="mini-ball ball ${b.cls}">${b.label}</div>`).join('')}</div>`;
+        html += `<tr><td>Ov ${ov.overNum}</td><td>${ballsHtml}</td><td><b>${ov.runs}</b></td><td>${ov.wickets}</td><td>${ov.totalAfter}/${ov.wktsAfter}</td></tr>`;
+      });
+      html += `</table>`;
+    }
+    html += `</div>`;
+    document.getElementById('inn1-scorecard').innerHTML = html;
+  } else if (n === 2 && state.innings === 2) {
+    // Back to live scoring
+    document.getElementById('inn-tab-2').classList.add('active');
+    document.getElementById('inn-tab-1').classList.remove('active');
+    document.getElementById('inn1-view').style.display = 'none';
+    document.getElementById('live-view').style.display = 'block';
+  }
 }
 
 function newMatch() {
