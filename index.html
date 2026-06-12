@@ -256,11 +256,8 @@ input:focus, select:focus { outline: none; border-color: var(--green); box-shado
     <input id="overs-input" type="number" min="1" max="50" value="20" placeholder="e.g. 20">
     <div class="hint">Any number — 5, 10, 20 or custom</div>
     <label>Players per side</label>
-    <select id="players-select">
-      <option value="6">6 players</option>
-      <option value="8">8 players</option>
-      <option value="11" selected>11 players</option>
-    </select>
+    <input id="players-select" type="number" min="2" max="15" value="11" placeholder="e.g. 11">
+    <div class="hint">Any number — 6, 8, 11 or custom</div>
   </div>
   <button class="btn" onclick="startMatch()">🏏 Start Match</button>
 </div>
