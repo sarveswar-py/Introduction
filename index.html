@@ -391,7 +391,7 @@ input:focus, select:focus { outline: none; border-color: var(--green); box-shado
         <button class="run-btn rb5" onclick="addBall(5)">5</button>
         <button class="run-btn rb6" onclick="addBall(6)">6 💥</button>
         <button class="run-btn rbW" onclick="addWicket(null)">W 🔴</button>
-        <button class="run-btn rbWide" onclick="addExtra('wide')">Wide</button>
+        <button class="run-btn rbWide" onclick="showWideModal()">Wide</button>
         <button class="run-btn rbNB" onclick="addExtra('noball')">No Ball</button>
         <button class="run-btn rbLB" onclick="addExtra('lb')">Leg Bye</button>
         <button class="run-btn rbUndo" onclick="undoLast()">↩ Undo</button>
@@ -466,6 +466,23 @@ input:focus, select:focus { outline: none; border-color: var(--green); box-shado
     </div>
     <button class="btn btn-sm btn-secondary" style="margin-bottom:8px" onclick="showScorecard()">📊 Full Scorecard</button>
     <button class="btn" onclick="newMatch()">🔄 Play Again</button>
+  </div>
+</div>
+
+<!-- WIDE MODAL -->
+<div class="modal-overlay" id="wide-modal">
+  <div class="modal" style="border-color:#f4511e">
+    <h2 style="color:#ff9800">💨 Wide!</h2>
+    <p style="color:#607d8b;font-size:0.85rem;margin-bottom:14px">1 penalty run added. Did the wide reach the boundary?</p>
+    <label>Extra runs from wide</label>
+    <select id="wide-runs">
+      <option value="0">0 — just 1 wide run</option>
+      <option value="4">+4 — wide to boundary (5 total)</option>
+    </select>
+    <div class="modal-btns">
+      <button class="btn btn-sm btn-secondary" onclick="document.getElementById('wide-modal').classList.remove('open')">Cancel</button>
+      <button class="btn btn-sm" style="background:linear-gradient(135deg,#bf360c,#f4511e);color:#fff" onclick="confirmWide()">Confirm</button>
+    </div>
   </div>
 </div>
 
@@ -617,6 +634,24 @@ function addExtra(type, extraRuns) {
     if (state.balls[ii()]%6===0) endOver();
   }
   state.currentOverLog.push({type, runs: runVal});
+  checkEnd(); updateDisplay();
+}
+
+function showWideModal() {
+  document.getElementById('wide-modal').classList.add('open');
+}
+
+function confirmWide() {
+  const extra = parseInt(document.getElementById('wide-runs').value) || 0;
+  document.getElementById('wide-modal').classList.remove('open');
+  saveUndo();
+  const totalRuns = 1 + extra; // 1 wide penalty + boundary runs
+  state.runs[ii()] += totalRuns; state.extras[ii()] += totalRuns;
+  const b = bs(); b.runs += totalRuns; b.curRuns += totalRuns;
+  const label = extra > 0 ? 'Wd+'+extra : 'Wd';
+  state.currentOverBalls.push({cls:'wide', label});
+  state.currentOverLog.push({type:'wide', runs: totalRuns});
+  // Wide is NOT a legal ball
   checkEnd(); updateDisplay();
 }
 
@@ -1084,7 +1119,7 @@ function buildBarChart() {
 }
 
 function newMatch() {
-  ['match-end-modal','end-innings-modal','noball-modal'].forEach(id=>document.getElementById(id).classList.remove('open'));
+  ['match-end-modal','end-innings-modal','noball-modal','wide-modal'].forEach(id=>document.getElementById(id).classList.remove('open'));
   document.getElementById('scorecard-screen').style.display='none';
   document.getElementById('score-screen').style.display='none';
   document.getElementById('toss-screen').style.display='none';
