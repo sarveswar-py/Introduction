@@ -140,10 +140,6 @@
       <option value="8">8</option>
       <option value="11" selected>11</option>
     </select>
-    <label>Team 1 Player Names <span style="color:#607d8b;font-size:0.75rem">(optional — leave blank to auto-name)</span></label>
-    <div id="team1-player-inputs"></div>
-    <label style="margin-top:12px">Team 2 Player Names <span style="color:#607d8b;font-size:0.75rem">(optional)</span></label>
-    <div id="team2-player-inputs"></div>
   </div>
   <button class="btn" onclick="startMatch()">Start Match 🏏</button>
 </div>
@@ -277,25 +273,6 @@
 <script>
 let state = {};
 
-function buildPlayerInputs() {
-  const n = parseInt(document.getElementById('players-select').value);
-  ['team1-player-inputs','team2-player-inputs'].forEach((id, ti) => {
-    const div = document.getElementById(id);
-    div.innerHTML = '';
-    for (let i = 0; i < n; i++) {
-      const inp = document.createElement('input');
-      inp.type = 'text';
-      inp.placeholder = `Player ${i+1} (optional)`;
-      inp.id = `t${ti+1}p${i}`;
-      inp.style.marginBottom = '6px';
-      div.appendChild(inp);
-    }
-  });
-}
-
-document.getElementById('players-select').addEventListener('change', buildPlayerInputs);
-buildPlayerInputs();
-
 function startMatch() {
   const t1 = document.getElementById('team1').value.trim() || 'Team 1';
   const t2 = document.getElementById('team2').value.trim() || 'Team 2';
@@ -304,10 +281,8 @@ function startMatch() {
 
   const p1 = [], p2 = [];
   for (let i = 0; i < n; i++) {
-    const v1 = document.getElementById(`t1p${i}`).value.trim() || `${t1} P${i+1}`;
-    const v2 = document.getElementById(`t2p${i}`).value.trim() || `${t2} P${i+1}`;
-    p1.push(newBatter(v1));
-    p2.push(newBatter(v2));
+    p1.push(newBatter(`${t1} P${i+1}`));
+    p2.push(newBatter(`${t2} P${i+1}`));
   }
 
   state = {
